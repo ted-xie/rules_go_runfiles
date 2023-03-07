@@ -1,4 +1,5 @@
 workspace(name = "rules_go_runfiles_repro")
+
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
@@ -24,6 +25,10 @@ load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
 
 go_rules_dependencies()
 
-go_register_toolchains(version = "1.19.5")
+go_register_toolchains(version = "1.20")
 
 gazelle_dependencies()
+
+load("go_deps.bzl", "go_dependencies")
+
+go_dependencies()

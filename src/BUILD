@@ -30,4 +30,5 @@ go_test(
     name = "src_test",
     srcs = ["a_test.go"],
     embed = [":src"],
+    deps = ["@io_bazel_rules_go//go/runfiles:runfiles"],
 )
